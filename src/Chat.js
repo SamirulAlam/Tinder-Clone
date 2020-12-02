@@ -1,11 +1,13 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Chat.css"
 
 
 function Chat({name,message,profilePic,timestamp}) {
     return (
-        <div className="chat">
+       <Link to={`/chat/${name}`}>
+            <div className="chat">
             <Avatar className="chat__image" src={profilePic} />
             <div className="chat__details">
                 <h2>{name}</h2>
@@ -13,6 +15,7 @@ function Chat({name,message,profilePic,timestamp}) {
             </div>
             <p className="chat__timestamp">{timestamp}</p>
         </div>
+       </Link>
     )
 }
 
